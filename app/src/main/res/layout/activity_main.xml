@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/appbar_layout"
             app:elevation="0dp"
-            android:background="#FFFFFF"
+            android:background="#BCDBF7"
             android:orientation="vertical"
             >
             <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -28,9 +28,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context=".activity.散件.DongTai_single"
-                android:background="#FFFFFF"
-                android:minHeight="200dp"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:background="#BCDBF7"
+                android:minHeight="10dp"
+                app:layout_scrollFlags="scroll"
                 >
 
                 <TextView
@@ -175,6 +175,7 @@
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:background="#BCDBF7"
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

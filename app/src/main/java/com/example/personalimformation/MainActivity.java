@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import cc.shinichi.library.tool.utility.ui.ToastUtil;
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.FormBody;
 import okhttp3.RequestBody;
@@ -57,6 +58,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case 2:
+                if (resultCode == RESULT_OK){
+                    String tiwen=data.getStringExtra("tiwen");
+                    String jiaren=data.getStringExtra("jiaren");
+                    String time=data.getStringExtra("time");
+                    Data1 data1= new Data1(tiwen,jiaren,time);
+                    data1List.add(0,data1);
+                    adapter_data1.notifyItemInserted(0);
+                    recyclerView.scrollToPosition(0);
+                }
+                break;
+
+        }
+    }
+
     class Adapter_Data1 extends RecyclerView.Adapter<Adapter_Data1.ViewHolder> {
         private List<Data1> my_data;
 
@@ -73,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             Data1 data1 = my_data.get(position);
             holder.textView1.setText(data1.getTiwen());
             holder.textView2.setText(data1.getJiaren());
-            holder.textView3.setText(data1.getTime().toString());
+            holder.textView3.setText(data1.getTime());
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
@@ -84,9 +102,9 @@ public class MainActivity extends AppCompatActivity {
 
             public ViewHolder(View view) {
                 super(view);
-                textView1=findViewById(R.id.tiwen);
-                textView2=findViewById(R.id.jiaren);
-                textView3=findViewById(R.id.time);
+                textView1=view.findViewById(R.id.tiwen);
+                textView2=view.findViewById(R.id.jiaren);
+                textView3=view.findViewById(R.id.time);
             }
         }
 

@@ -60,14 +60,28 @@
 
 
     <EditText
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="140dp"
-        android:layout_marginLeft="120dp"
         android:id="@+id/editView"
-        />
+        android:layout_width="220dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="150dp"
+        android:background="#FFFFFF"
+        android:gravity="top"
+        android:hint="输入体温"
+        android:lineSpacingExtra="3.5dp"
+        android:lines="1"
+        android:maxLength="180"
+        android:singleLine="false"
+        android:textColor="#3F3F3F"
+        android:textColorHint="#999898"
+        android:textSize="14.5dp"
+        android:typeface="sans"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <requestFocus />
+    </EditText>
 
     <Button
         android:layout_width="0dp"

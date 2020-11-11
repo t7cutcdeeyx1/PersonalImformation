@@ -2,14 +2,17 @@ package com.example.personalimformation;
 
 import org.litepal.crud.DataSupport;
 
-import java.sql.Timestamp;
 
 public class Data1 extends DataSupport {
     String tiwen;
     String jiaren;
-    Timestamp time;
+    String time;
 
-    public Data1(String tiwen,String jiaren,Timestamp time){
+    public Data1(){
+        super();
+    }
+
+    public Data1(String tiwen,String jiaren,String time){
         this.tiwen = tiwen;
         this.jiaren = jiaren;
         this.time = time;
@@ -31,11 +34,11 @@ public class Data1 extends DataSupport {
         this.jiaren = jiaren;
     }
 
-    public Timestamp getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(String time) {
         this.time = time;
     }
 }
